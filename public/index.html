@@ -32,24 +32,6 @@
   <!-- Character Counter -->
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      $("#tweet-text").on("input", function() {
-        let remainingCharacters = 140 - $(this).val().length;
-        let $counter = $(this).siblings().children(".counter");
-        $counter.val(remainingCharacters);
-
-        //If the remaining character count is less than zero, change the font to red
-        if (remainingCharacters < 0) {
-          $counter.addClass('negative-color');
-        } else {
-          $counter.removeClass('negative-color');
-        }
-      });
-    });
-  </script>
 </head>
 
 <body>

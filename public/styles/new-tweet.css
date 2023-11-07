@@ -1,3 +1,12 @@
+/*  Color classes for character count  */
+.positive-color {
+  color: #3a3b3c;
+}
+
+.negative-color {
+  color: #8B0000;
+}
+
 .new-tweet {
   width: 90%;
   margin: 0 auto;

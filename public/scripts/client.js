@@ -38,6 +38,18 @@ $(document).ready(function() {
 
   $("#tweet-form").on("submit", function(event) {
     event.preventDefault();
+
+    let tweetContent = $("#tweet-text").val();
+    if (tweetContent === "" || tweetContent === null) {
+      alert('Empty tweets cannot be tweeted!');
+      return false;
+    }
+
+    if (tweetContent.length > 140) {
+      alert('Maximum tweet length is 140 characters. Please shorten your tweet.');
+      return false;
+    }
+
     $.post("/tweets", $(this).serialize(), function(data) {
       $(".result").html(data);
     })

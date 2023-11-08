@@ -6,7 +6,7 @@
 
 $(document).ready(function() {
 
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -47,7 +47,7 @@ $(document).ready(function() {
   const loadTweets = function() {
     $.get("/tweets", function(data) {
       renderTweets(data);
-    })
+    });
   };
 
   $("#tweet-form").on("submit", function(event) {
@@ -55,12 +55,28 @@ $(document).ready(function() {
 
     let tweetContent = $("#tweet-text").val();
     if (tweetContent === "" || tweetContent === null) {
-      alert('Empty tweets cannot be tweeted!');
+
+      const errorMessage = $("#error-message");
+      errorMessage.text('❗ Empty tweets cannot be tweeted. ❗');
+      errorMessage.slideDown('slow');
+
+      setTimeout(function() {
+        errorMessage.slideUp('slow');
+      }, 3000);
+
       return false;
     }
 
     if (tweetContent.length > 140) {
-      alert('Maximum tweet length is 140 characters. Please shorten your tweet.');
+
+      const errorMessage = $("#error-message");
+      errorMessage.text('❗ Maximum tweet length is 140 characters. Please shorten your tweet. ❗');
+      errorMessage.slideDown('slow');
+
+      setTimeout(function() {
+        errorMessage.slideUp('slow');
+      }, 3000);
+
       return false;
     }
 
@@ -68,11 +84,11 @@ $(document).ready(function() {
       let tweetObject = data;
       let tweetElement = createTweetElement(tweetObject);
       $(".tweet-list").prepend(tweetElement);
-    })
+    });
 
     $("#tweet-form")[0].reset();
 
-  })
+  });
 
   loadTweets();
 }

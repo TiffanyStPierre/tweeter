@@ -53,6 +53,10 @@ $(document).ready(function() {
     $.post("/tweets", $(this).serialize(), function(data) {
       $(".result").html(data);
     })
+
+    $("#tweet-form")[0].reset();
+
+    loadTweets();
   })
 
   const loadTweets = function() {

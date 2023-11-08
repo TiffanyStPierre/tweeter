@@ -63,6 +63,12 @@ $(document).ready(function() {
   };
 
   renderTweets(tweetData);
+
+  $("#tweet-form").on("submit", function(event) {
+    event.preventDefault();
+    $.post("/tweets", $(this).serialize(), function(data) {
+      $(".result").html(data);
+    })
+  })
 }
 );
-

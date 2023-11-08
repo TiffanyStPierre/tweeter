@@ -4,7 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
 $(document).ready(function() {
 
   const createTweetElement = function(tweetObject) {
@@ -18,7 +17,7 @@ $(document).ready(function() {
   </header>
   <p class="tweet-text">${tweetObject.content.text}</p>
   <footer>
-    <p>${tweetObject.created_at}</p>
+    <p>${timeago.format(tweetObject.created_at, 'en_US')}</p>
     <div class="tweet-icons">
       <i class="fa-solid fa-flag"></i>
       <i class="fa-solid fa-retweet"></i>

@@ -40,3 +40,9 @@
   border: none;
   padding: 0.1em 0.3em;
 }
+
+.error-message {
+  display: none;
+  color: #8B0000;
+  border: 2px solid #8B0000;
+}

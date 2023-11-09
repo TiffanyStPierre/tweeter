@@ -6,12 +6,14 @@
 
 $(document).ready(function() {
 
+  // Escape certain characters in tweet text to prevent cross site scripting
   const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
+  // Create new tweet
   const createTweetElement = function(tweetObject) {
     let $tweet = $(`<article class="tweet">
     <header>
@@ -35,6 +37,7 @@ $(document).ready(function() {
     return $tweet;
   };
 
+  // Display tweets on page - most recent first
   const renderTweets = function(tweetArray) {
     $(".tweet-list").empty();
 
@@ -44,12 +47,14 @@ $(document).ready(function() {
     });
   };
 
+  // Get tweets from psuedo database
   const loadTweets = function() {
     $.get("/tweets", function(data) {
       renderTweets(data);
     });
   };
 
+  // Submit new tweet with validation
   $("#tweet-form").on("submit", function(event) {
     event.preventDefault();
 
@@ -90,6 +95,7 @@ $(document).ready(function() {
 
   });
 
+  // Display tweets on page when page loads
   loadTweets();
 }
 );

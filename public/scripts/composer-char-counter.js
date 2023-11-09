@@ -1,3 +1,5 @@
+
+// Count & display number of characters remaining
 $(document).ready(function() {
   $("#tweet-text").on("input", function() {
     let remainingCharacters = 140 - $(this).val().length;

@@ -16,3 +16,8 @@ It's built using Express, jQuery, Javascript, HTML & CSS. It uses ajax requests 
 
 - Express
 - Node 5.10.x or above
+
+## Screenshots
+!["Tweeter Desktop Version"](https://github.com/TiffanyStPierre/tweeter/blob/master/docs/tweeter-desktop.png?raw=true)
+
+!["Tweeter Mobile Version"](https://github.com/TiffanyStPierre/tweeter/blob/master/docs/tweeter-mobile.png?raw=true)

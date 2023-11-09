@@ -41,12 +41,16 @@
   padding: 0.1em 0.3em;
 }
 
-/*.hide-error {
-  display: none;
-}*/
-
 #error-message {
   color: #8B0000;
   font-weight: bold;
   text-align: left;
+}
+
+@media (max-width: 1024px) {
+
+  .new-tweet {
+    margin-top: 2em;
+  }
+
 }

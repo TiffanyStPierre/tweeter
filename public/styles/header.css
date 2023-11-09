@@ -7,4 +7,23 @@
   justify-content: flex-end;
   background-image: url(../images/arches.png);
   background-color: #e1ad01;
+  color: #ffffff;
+}
+
+h2 {
+  font-weight: 300;
+}
+
+strong {
+  font-weight: 600;
+}
+
+@media (min-width: 1024px) {
+
+  .main-header {
+    max-width: 35%;
+    height: 425px;
+    margin-top: 10em;
+  }
+
 }

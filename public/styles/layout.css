@@ -6,7 +6,10 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -25,8 +28,27 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- main {
-  width: 90%;
+main {
   margin: 0 auto;
   text-align: center;
- }
+}
+
+@media (min-width: 1024px) {
+
+  .desktop-container {
+    display: flex;
+    margin: 0 4%;
+    justify-content: space-between;
+  }
+
+  main {
+    width: 55%;
+    margin: 0;
+    margin-top: 10em;
+  }
+
+  .new-tweet {
+    width: 100%;
+  }
+
+}

@@ -3,23 +3,33 @@ nav {
   width: 100vw;
   background-color: #4056a1;
   color: #ffffff;
-  padding: 0 1.5em;
+  padding: 0 2.5em;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: fixed;
 }
 
-nav span{
+nav span {
   font-family: 'Bungee', sans-serif;
 }
 
 nav i {
-  color: #e1ad01;
+  color: #8B0000;
+  padding-bottom: 1em;
 }
 
 .nav-new-tweet {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media (max-width: 1024px) {
+
+  nav {
+    background-image: url(../images/arches.png);
+    background-color: #e1ad01;
+  }
+
 }

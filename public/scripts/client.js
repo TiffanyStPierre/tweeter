@@ -51,6 +51,9 @@ $(document).ready(function() {
   const loadTweets = function() {
     $.get("/tweets", function(data) {
       renderTweets(data);
+    })
+    .fail(function(jqXHR, textStatus, errorThrown) {
+      console.error("Error:", errorThrown);
     });
   };
 
@@ -89,6 +92,9 @@ $(document).ready(function() {
       let tweetObject = data;
       let tweetElement = createTweetElement(tweetObject);
       $(".tweet-list").prepend(tweetElement);
+    })
+    .fail(function(jqXHR, textStatus, errorThrown){
+      console.error("Error:", errorThrown);
     });
 
     $("#tweet-form")[0].reset();

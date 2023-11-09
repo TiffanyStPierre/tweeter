@@ -26,6 +26,13 @@
   resize: none;
   width: 100%;
   font-weight: 600;
+  outline: none;
+  line-height: 1;
+}
+
+::placeholder {
+  opacity: 1;
+  color: #3a3b3c;
 }
 
 .tweet-submit {
